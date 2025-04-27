@@ -127,16 +127,22 @@
     transform: scale(1);
   }
 }
+.RandomClicksImage{
+  display: none;
+}
 @media (min-width: 768px) {
   .randomImagesSmScreen {
     display: none;
   }
+  .RandomClicksImage{
+  display: block;
+}
 .clyncImage{
-  width: 60rem;
+  width: 70rem;
 }
 .clyncImage img {
-  width: 70.86769rem;
-  height: 10.73rem;
+  width: 60rem;
+  height: 20.73rem;
 }
 .clyncImage p{
   width: 33.125rem;
@@ -150,5 +156,11 @@ font-style: normal;
 font-weight: 300;
 line-height: 1.375rem;
 letter-spacing: -0.02563rem;
+}
+}
+@media (min-width:  1480px) {
+  .clyncImage img {
+  width: 90rem;
+  height: 20.73rem;
 }
 }

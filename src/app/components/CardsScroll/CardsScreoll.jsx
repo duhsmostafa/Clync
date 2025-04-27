@@ -174,47 +174,87 @@ export default function CardScroll() {
         };
     }, []);
 
+
+
+useEffect(() => {
+    let timeoutId;
+
+    const handleScroll = () => {
+        const card2 = document.getElementById('card-2');
+        if (card2) {
+            const card2Top = card2.getBoundingClientRect().top;
+            if (card2Top <= 0) {
+                // Add a 2-second delay before showing the second view
+                timeoutId = setTimeout(() => {
+                    setIsCard2InView(true);
+                }, 2000);
+            } else {
+                // Clear the timeout if the user scrolls back up
+                clearTimeout(timeoutId);
+                setIsCard2InView(false);
+            }
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+        clearTimeout(timeoutId); // Cleanup the timeout on unmount
+    };
+}, []);
+
     return (
         <main>
             {/* Card-2 */}
-            <div id="card-2" className="card any m-auto">
-                <div className="row g-0">
-                    <div className="card-body cardOneImages">
-                        <Image src={card1img1} className="image-spacing bg1" alt="Rectangle 19861" />
-                        <Image src={card1img2} className="image-spacing bg2" alt="Rectangle 19862" />
-                        <Image src={card1img3} className="image-spacing bg3" alt="Rectangle 19863" />
-                        <Image src={card1img4} className="image-spacing bg4" alt="Rectangle 19864" />
-                    </div>
-                    <div className={`row g-0 card3 ${isCard2InView ? '' : 'd-none'}`}>
-                        <div className="col-md-8">
-                            <div className="card-body card-3">
-                                <h2>Chit, <br />Chat,<br />Done.</h2>
-                                <p>Stay in the loop with your people. 
-Spill the tea, host events, and keep the convo rolling without ever losing the vibe.</p>
-                            </div>
+<div id="card-2" className="card any m-auto">
+    <div className="row g-0">
+        {/* First View: 4 Images */}
+        <div className={`card-body cardOneImages ${isCard2InView ? 'd-none' : ''}`}>
+            <Image src={card1img1} className="image-spacing bg1" alt="Rectangle 19861" />
+            <Image src={card1img2} className="image-spacing bg2" alt="Rectangle 19862" />
+            <Image src={card1img3} className="image-spacing bg3" alt="Rectangle 19863" />
+            <Image src={card1img4} className="image-spacing bg4" alt="Rectangle 19864" />
+        </div>
+
+        {/* Second View: Text and Images */}
+        <div className={`row g-0 card3 ${isCard2InView ? '' : 'd-none'}`}>
+                        <div>
+                            <div  className='secViewImages'>
+            <Image src={card1img1} className=" bg01" alt="Rectangle 19861" />
+            <Image src={card1img2} className=" bg02" alt="Rectangle 19862" />
+            <Image src={card1img3} className=" bg03" alt="Rectangle 19863" />
+            <Image src={card1img4} className=" bg04" alt="Rectangle 19864" />
+                </div>
                         </div>
-                        <div className="col-md-2 col-image3">
-                            <div className="card3SplitBillImage">
-                                <Image src={webChatting} className="image3" alt="Rectangle 19884" />
-                                <Image src={chattingBubles} className="bubles" alt="Rectangle 19884" />
-                            </div>
-                        </div>
-                    </div>
+                        <div className='innerCard2SecView'>
+                                                    <div className="card-body citChatDone  card-4">
+                    <h2>Chit, <br />Chat,<br />Done.</h2>
+                    <p>Stay in the loop with your people. 
+                    Spill the tea, host events, and keep the convo rolling without ever losing the vibe.</p>
+                </div>
+            <div className="col-md-2 col-image3">
+                <div className="card3SplitBillImage">
+                    <Image src={webChatting} className="image3 BoyImage" alt="Rectangle 19884" />
+                    <Image src={chattingBubles} className="bubles" alt="Rectangle 19884" />
                 </div>
             </div>
+                        </div>
+        </div>
+    </div>
+</div>
 
             {/* Card-3 */}
             <div id="card-3" className="card w-100 any m-auto">
                 <div className="row g-0 card3">
                     <div className="col-md-8">
-                        <div className="card-body card-3">
+                        <div className="card-body card-4 cardNum3">
                             <h2>Split Bills <br /> Without <br />Sweat</h2>
                             <p>Forget the awkward math and endless back and forth, split checks and bills in seconds. Our split bill keeps the fun flowing with no calculators or drama.</p>
                         </div>
                     </div>
                     <div className="col-md-4 col-image3">
                         <div className="card3SplitBillImage">
-                            <Image src={splitBills} className="image3" alt="Rectangle 19884" />
+                            <Image src={splitBills} className="image3 splitBills" alt="Rectangle 19884" />
                         </div>
                     </div>
                 </div>
@@ -224,9 +264,9 @@ Spill the tea, host events, and keep the convo rolling without ever losing the v
             <div id="card-4" className="card w-100 any m-auto">
                 <div className="row g-0 card4">
                     <div className="col-md-8">
-                        <div className="card-body card-4">
+                        <div className="card-body card-4 cardNum3">
                             <h2>For Both<br />the Sleek <br />& Savage</h2>
-                            <p>Forget the awkward math and endless back and forth, split checks and bills in seconds. Our split bill keeps the fun flowing with no calculators or drama.</p>
+                            <p>Spend smarter and flex harder with a prepaid card designed to match your style. Spend it, swipe it, and flex it wherever you go.</p>
                         </div>
                     </div>
                     <div className="col-md-4 col-image3">
@@ -246,7 +286,7 @@ Spill the tea, host events, and keep the convo rolling without ever losing the v
             <div id="card-5" className="card w-100 any m-auto">
                 <div className="row g-0 card4">
                     <div className="col-md-8">
-                        <div className="card-body card-4">
+                        <div className="card-body card-4 cardNum3">
                             <h2>Saved,<br />Stacked,<br />& Locked!</h2>
                             <p>Keep your money goals in check. Save, plan, and track every pound. Pockets have your back; organized, easy, and totally yours.</p>
                         </div>

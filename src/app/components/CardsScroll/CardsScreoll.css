@@ -1,7 +1,7 @@
 /* =================cards===================== */
 .bottomImage{
     position: fixed;
-    bottom: 0;
+    bottom: 2%;
     left: 0;
     width: 100%;
     z-index: 9999;
@@ -43,17 +43,17 @@ width: 9rem;
         right: 0;
         bottom: 50px;
     }
-#card-3 , #card-5{
+#card-3 {
       background: radial-gradient(101.97% 89.91% at 100% 0%, #2E8D1E 0%, rgba(0, 0, 0, 0) 100%);
       background-color: black;
 }
-#card-2 , #card-4{
+#card-2 , #card-4 {
 background: linear-gradient(251deg, rgba(0, 0, 0, 0.00) 0.77%, #171717 68.32%); 
 background-color: black;
 }
-.card-3 h2 , .card-4 h2{
+.card-4 h2{
 color: #FFF;
-font-family: "SF Pro Display";
+font-family: "SF Pro Display", var(--font-montserrat), sans-serif;
 font-size: 3rem;
 font-style: normal;
 font-weight: 700;
@@ -62,7 +62,7 @@ margin-top: 20px;
 }
 .card-3 p , .card-4 p{
 color: #CCCBCB;
-font-family: Montserrat;
+font-family: var(--font-montserrat);
 font-size: 0.875rem;
 font-style: normal;
 font-weight: 500;
@@ -71,18 +71,20 @@ letter-spacing: -0.02563rem;
 width: 80%;
 }
 .image4 {
-    width: 8.69331rem;
-    height: 36.75288rem;
+    width: 11.69331rem;
+    height: 50.75288rem;
     flex-shrink: 0;
     aspect-ratio: 139.09/556.05;
     position: absolute;
-    top: -40px;
+    top: -60px;
     right: 0;
-    margin-top: -40px;
+    margin-top: -60px;
+    transform: rotate(7.486deg);
 }
 
 .image4.animate {
-    animation: dropDownAndUp 2s ease-in-out;
+    animation: dropDownAndUp 1s ease-in-out;
+    animation-delay: 1s;
 }
 
 @keyframes dropDownAndUp {
@@ -90,7 +92,7 @@ width: 80%;
         margin-top: -40px; 
     }
     50% {
-        margin-top: 20px;
+        margin-top: 100px;
     }
     100% {
         margin-top: -40px; 
@@ -98,11 +100,11 @@ width: 80%;
 }
 
 .Duckimage4 {
-    width: 22.5625rem;
-    height: 11.125rem;
+width: 30.5625rem;
+height: 10.125rem;
     flex-shrink: 0;
     position: absolute;
-    bottom: 30px;
+    bottom: 0px;
     right: 10px;
 }
 
@@ -139,10 +141,6 @@ width: 80%;
   flex-shrink: 0;
 }
 
-.redBox {
-  margin-top: -40%;
-  margin-left: 10%;
-}
 
 /* Animation for the boxes */
 @keyframes slideInFromLeft {
@@ -208,14 +206,414 @@ width: 80%;
   animation: scaleUp 0.5s ease-in-out forwards;
 }
 
-@media (min-width: 768px){
+.secViewImages {
+  display: flex;
+  justify-content: space-around; 
+  gap: 0px; 
+  flex-wrap: wrap;
+}
+
+  .card-3{
+    z-index: 100000;
+    position: absolute;
+    top: 20%;
+  }
+  .image3{
+  position: absolute;
+  bottom: 0;
+  width: 23.5rem;
+  height: 19.9375rem;
+  flex-shrink: 0;
+  transform: translateX(100%); 
+    animation: slideInFromRight 0.5s ease-in-out 4s forwards; 
+  }
+  .bubles{
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    width: 9.68644rem;
+  height: 9.20056rem;
+  }
+  @keyframes moveUp01 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes moveUp02 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes moveUp03 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-165%);
+    }
+  }
+
+  @keyframes moveUp04 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-150%);
+    }
+  }
+
+  .bg01 {
+  width: 9.28125rem;
+  height: 21.53125rem;
+    flex-shrink: 0;
+    animation: moveUp01 1s ease-in-out 0s forwards;
+  }
+
+  .bg02 {
+  width: 10.28125rem;
+  height: 21.53125rem;
+    flex-shrink: 0;
+    animation: moveUp02 1s ease-in-out 1s forwards;
+  }
+
+  .bg03 {
+  width: 10.28125rem;
+  height: 21.53125rem;
+    flex-shrink: 0;
+    animation: moveUp03 1s ease-in-out 2s forwards;
+  }
+
+  .bg04 {
+  width: 9.28125rem;
+  height: 21.53125rem;
+    flex-shrink: 0;
+    animation: moveUp04 1s ease-in-out 3s forwards;
+  }
+
+
+  .innerCard2SecView {
+    opacity: 0; 
+    animation: fadeIn 0.5s ease-in-out 4s forwards; 
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    to {
+      transform: translateX(0); 
+    }
+  }
+
+.citChatDone{
+  position: absolute;
+  top: 18%;
+}
+.splitBills{
+  right: -9% !important;
+}
+
+.yellowBox{
+  position: absolute;
+left: 10%;
+top: 44%;
+}
+.addPocket{
+  position: absolute;
+  right: 15%;
+  margin-top: 15% !important;
+}
+.redBox{
+  position: absolute;
+  height: 6rem;
+  left: 20%;
+  margin-top: 105% !important;
+}
+.boxsImage3{
+  height: 6rem;
+position: absolute;
+right: -20px;
+top: 55%;
+margin-right: 7%;
+}
+
+.boxsImage4{
+    height: 9rem;
+  position: absolute;
+  right: 15%;
+  bottom: 5%;
+  z-index: 100000000000000;
+}
+@media (min-width: 360px) and (max-width: 390px){
+.boxsImage4{
+  bottom: 2%;
+    right: 10%;
+}
+.boxsImage3{
+right: -30px;
+top: 60%;
+margin-right: 7%;
+}
+.addPocket{
+  right: 10%;
+}
+.yellowBox{
+left: 5%;
+top: 44%;
+}
+
+.image3 {
+  max-width: 95%;
+}
+.image4 {
+    width: 9.69331rem;
+    height: 35.75288rem;
+    margin-top: 0px;
+}
+.Duckimage4 {
+width: 25.5625rem;
+height: 10.125rem;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+}
+}
+  @media (min-width: 768px){
+      #card-2 {
+    margin-top: 60% !important;
+}
+#card-2 , #card-3 , #card-4 , #card-5{
+  width: 75rem !important;
+  height: 40.75rem;
+}
+
+.cardOneImages{
+  gap: 15px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+.image-spacing{
+  width: 17.5rem;
+  height: 43.5rem;
+flex-shrink: 0;
+}
+.secViewImages{
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-between;
+gap: 15px;
+}
+
+@keyframes moveUp01 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-85%);
+  }
+}
+
+@keyframes moveUp02 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-75%);
+  }
+}
+
+@keyframes moveUp03 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-55%);
+  }
+}
+
+@keyframes moveUp04 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-35%);
+  }
+}
+.bg01 {
+  width: 17.5rem;
+  height: 43.5rem;
+  flex-shrink: 0;
+  animation: moveUp01 1s ease-in-out 0s forwards;
+}
+
+.bg02 {
+  width: 17.5rem;
+  height: 43.5rem;
+  flex-shrink: 0;
+  animation: moveUp02 1s ease-in-out 0.5s forwards;
+}
+
+.bg03 {
+  width: 17.5rem;
+  height: 43.5rem;
+  flex-shrink: 0;
+  animation: moveUp03 1s ease-in-out 1s forwards;
+}
+
+.bg04 {
+  width: 17.5rem;
+  height: 43.5rem;
+  flex-shrink: 0;
+  animation: moveUp04 1s ease-in-out 1.5s forwards;
+}
+.bubles{
+  position: absolute;
+  left: 30%;
+  width: 10rem;
+  height:  auto;
+  margin-top: 5% !important;
+
+}
+.image3{
+  width: 50.40375rem;
+height: 30.53969rem;
+flex-shrink: 0;
+right: -10%;
+margin-top: -5%;
+}
+.card-4 h2{
+  width: 41.3125rem;
+height: 22.625rem;
+flex-shrink: 0;
+color: #FFF;
+font-family: var(--font-inter);
+font-size: 5.5rem;
+font-style: normal;
+font-weight: 700;
+line-height: 5rem;
+letter-spacing: -0.04388rem;
+position: absolute;
+top: 0%;
+bottom: 0%;
+left: 6% !important;
+}
+ .card-4 p {
+  width: 29.0625rem;
+height: 4.25rem;
+flex-shrink: 0;
+  font-family: var(--font-montserrat);
+color: #CCCBCB;
+font-family: Inter;
+font-size: 1.4rem;
+font-style: normal;
+font-weight: 300;
+line-height: 1.375rem; /* 95.652% */
+letter-spacing: -0.02563rem;
+margin-top: 55%;
+margin-left: 6%;
+ }
+ .splitBills{
+  width: 66rem;
+  height: 35rem;
+  position: absolute;
+  right: -22% !important;
+ }
+ .cardNum3 h2{
+  position: absolute;
+  top: 40%;
+  left: 5% !important;
+ }
+ .cardNum3 p{
+  margin-top: 170% !important;
+  margin-left: 15% !important;
+ }
+.image4{
+  width: 24.6875rem;
+height: 30.75rem;
+flex-shrink: 0;
+top: -10%;
+right: 15%;
+z-index: 100000;
+}
+.Duckimage4{
+  width: 50.25rem;
+height: 15.0625rem;
+flex-shrink: 0;
+right: -2%;
+bottom: 0;
+}
+.girlImage{
+  width: 30.05313rem;
+height: 50.0625rem;
+flex-shrink: 0;
+top: 53%;
+left: 66%;
+}
+.card5Images{
+width: 10.0625rem;
+height: 9.0625rem;
+flex-shrink: 0;
+}
+.yellowBox{
+  position: absolute;
+left: 45%;
+top: 8%;
+}
+.addPocket{
+  position: absolute;
+  right: 17%;
+  margin-top: 15% !important;
+}
+.redBox{
+  position: absolute;
+  height: 6rem;
+  left: 53%;
+  margin-top: 50% !important;
+}
+.boxsImage3{
+  height: 7rem;
+position: absolute;
+right: 30px;
+top: 40%;
+margin-right: 7%;
+}
+
+.boxsImage4{
+  position: absolute;
+  right: 15%;
+  bottom: 10%;
+  z-index: 100000000000000;
+}
+  }
+
+  /* @media (min-width: 1450px){
+#card-2 , #card-3 , #card-4 , #card-5{
+width: 90rem !important;
+  }
+  } */
+@media (min-width: 1480px){
   #card-2 {
     margin-top: 60% !important;
 }
 
 #card-2 , #card-3 , #card-4 , #card-5{
-  width: 75.375rem !important;
-height: 45.75rem;
+width: 100rem !important;
+height: 56.75rem;
 flex-shrink: 0;
 border-radius: 3.75rem;
 border: 1px solid rgba(255, 255, 255, 0.60);
@@ -223,40 +621,53 @@ flex-direction: row;
 align-items: end;
 padding: 30px 10px;
 }
+ #card-5{
+    background-image: url('../../assets/newBg.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 .cardOneImages{
   gap: 20px;
   flex-wrap: nowrap;
   align-items: flex-start;
 }
 .image-spacing{
-  width: 17.3rem;
-height: auto;
+  width: 23rem;
+height: 50.5rem;
 flex-shrink: 0;
 }
 .image3{
-width: 58.75rem;
-height: 38.5rem;
+  width: 66.40375rem;
+height: 50.53969rem;
 flex-shrink: 0;
-right: -14%;
-top: 30px;
+right: -10%;
+margin-top: 5%;
 }
-
+.splitBills{
+  right: -8% !important;
+  top: -20px !important;
+}
 .card-3 h2 {
 width: 50rem;
-height: 27.5rem;
+height: 23.5rem;
 flex-shrink: 0;
 color: #FFF;
-font-family: "SF Pro Display";
+font-family: "SF Pro Display", var(--font-montserrat), sans-serif;
 font-size: 8.62rem;
 font-style: normal;
 font-weight: 700;
-line-height: 9.44375rem; /* 109.556% */
+line-height: 7.44375rem; /* 109.556% */
 letter-spacing: -0.04388rem;
+margin-top: 20%;
 }
-.card-3 p , .card-4 p{
-  width: 32.875rem;
-height: 3.875rem;
+.card-3 p,
+.card-4 p ,
+.card-5 p {
+  width: 29.0625rem;
+height: 4.25rem;
 flex-shrink: 0;
+  font-family: var(--font-montserrat);
 color: #CCCBCB;
 font-family: Inter;
 font-size: 1.4375rem;
@@ -264,7 +675,11 @@ font-style: normal;
 font-weight: 300;
 line-height: 1.375rem; /* 95.652% */
 letter-spacing: -0.02563rem;
+position: absolute;
+bottom: 15%;
+left: 6%;
 }
+
 #card-3{
       background: radial-gradient(101.97% 89.91% at 100% 0%, #2E8D1E 0%, rgba(0, 0, 0, 0) 100%);
       background-color: black;
@@ -274,33 +689,36 @@ letter-spacing: -0.02563rem;
 height: 22.625rem;
 flex-shrink: 0;
 color: #FFF;
-font-family: Inter;
+font-family: var(--font-inter);
 font-size: 7.62rem;
 font-style: normal;
 font-weight: 700;
-line-height: 6rem;
+line-height: 7rem;
 letter-spacing: -0.04388rem;
+position: absolute;
+bottom: 25%;
+left: 6%;
 }
 .image4{
-  width: 14.6875rem;
-height: 38.75rem;
+  width: 24.6875rem;
+height: 44.75rem;
 flex-shrink: 0;
 top: -20%;
 right: 15%;
 }
 .Duckimage4{
-  width: 65.25rem;
-height: 16.0625rem;
+  width: 70.25rem;
+height: 22.0625rem;
 flex-shrink: 0;
-right: -15%;
+right: 0%;
 bottom: 0;
 }
 .girlImage{
-  width: 40.05313rem;
-height: 45.0625rem;
+  width: 45.05313rem;
+height: 50.0625rem;
 flex-shrink: 0;
 top: 53%;
-left: 75%;
+left: 66%;
 }
 .boxs{
   justify-content: space-between;
@@ -309,74 +727,162 @@ left: 75%;
   margin-top: -10%;
 }
 .card5Images{
-  width: 12.0625rem;
-height: 11.0625rem;
+width: 12.0625rem;
+height: 14.0625rem;
 flex-shrink: 0;
 }
 .yellowBox{
-  margin-top: -20%;
-  margin-left: -10%;
+  position: absolute;
+left: 35%;
+top: 75%;
 }
 .addPocket{
-  margin-top: -35%;
+  position: absolute;
+  right: 15%;
+  margin-top: -85% !important;
 }
 .redBox{
+  position: absolute;
   height: 17rem;
-  padding-top: 20%;
+  left: 23%;
+  margin-top: -51.5% !important;
 }
 .boxsImage3{
   height: 8rem;
 position: absolute;
 right: -40px;
 top: 40%;
+margin-right: 7%;
 }
+
 .boxsImage4{
   position: absolute;
-  right: 5%;
-  top: 70%;
+  right: 12%;
+  bottom: 10%;
   z-index: 100000000000000;
 }
 
 .bubles{
   position: absolute;
-  left: 45%;
-  width: 9rem;
-}
+  left: 40%;
+  width: 15rem;
+  height:  auto;
+  margin-top: 0% !important;
 
 }
-@media (min-width: 1480px){
-#card-2 , #card-3 , #card-4 , #card-5{
-width: 95rem !important;
-height: 56.75rem;
-flex-shrink: 0;
+
+.secViewImages{
+display: flex;
+justify-content: space-between;
+gap: 20px;
 }
-.image-spacing{
-  width: 22rem;
-height: 50.5rem;
-flex-shrink: 0;
+.card-3{
+  z-index: 100000;
+  position: absolute;
+  top: 20%;
 }
 .image3{
-  width: 62.40375rem;
-height: 45.53969rem;
-flex-shrink: 0;
-right: -10%;
-margin-top: 5%;
+position: absolute;
+bottom: 0;
+top: 15%;
 }
-.Duckimage4{
-  width: 66.25rem;
-height: 21.0625rem;
-flex-shrink: 0;
-right: 0%;
+.bubles{
+  position: absolute;
+  top: 40%;
 }
-.girlImage{
-  width: 45.05313rem;
-height: 50.0625rem;
-flex-shrink: 0;
+@keyframes moveUp01 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-85%);
+  }
 }
-.card5Images{
-width: 12.0625rem;
-height: 14.0625rem;
-flex-shrink: 0;
+
+@keyframes moveUp02 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-75%);
+  }
+}
+
+@keyframes moveUp03 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-55%);
+  }
+}
+
+@keyframes moveUp04 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-35%);
+  }
+}
+
+.bg01 {
+  width: 23rem;
+height: 50.5rem;
+  flex-shrink: 0;
+  animation: moveUp01 1s ease-in-out 0s forwards;
+}
+
+.bg02 {
+  width: 23rem;
+height: 50.5rem;
+  flex-shrink: 0;
+  animation: moveUp02 1s ease-in-out 0.5s forwards;
+}
+
+.bg03 {
+  width: 23rem;
+  height: 50.5rem;
+  flex-shrink: 0;
+  animation: moveUp03 1s ease-in-out 1s forwards;
+}
+
+.bg04 {
+  width: 23rem;
+  height: 50.5rem;
+  flex-shrink: 0;
+  animation: moveUp04 1s ease-in-out 1.5s forwards;
+}
+
+.secViewImages {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; 
+}
+
+.innerCard2SecView {
+  opacity: 0; 
+  animation: fadeIn 0.5s ease-in-out 2s forwards; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.image3 {
+  max-width: 100%;
+  transform: translateX(100%); 
+  animation: slideInFromRight 0.5s ease-in-out 2s forwards; 
+}
+
+@keyframes slideInFromRight {
+  to {
+    transform: translateX(0); 
+  }
 }
 .yellowBox{
   margin-top: -40%;
@@ -395,5 +901,22 @@ flex-shrink: 0;
 .boxsImage3{
   right: 5px !important;
   height: 10rem;
+}
+ .cardNum3 h2{
+  position: absolute;
+  top: 35%;
+  left: 5% !important;
+ }
+ .cardNum3 p{
+  margin-left: 0% !important;
+ }
+ .citChatDone{
+  position: absolute;
+  top: 30%;
+  left: 5% !important;
+}
+ .citChatDone p{
+  position: absolute;
+  top: 1100% !important;
 }
 }

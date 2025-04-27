@@ -23,6 +23,7 @@ export default function Home() {
   const [lastImage, setLastImage] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [resetAnimation, setResetAnimation] = useState(false);
+  const [isBottomImageVisible, setIsBottomImageVisible] = useState(true); // New state for bottomImage visibility
 
   const handleClick = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -45,6 +46,7 @@ export default function Home() {
   };
 
   useEffect(() => {
+    // Scroll progress logic
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -60,7 +62,31 @@ export default function Home() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Intersection Observer for footer
+    const footer = document.querySelector('footer');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsBottomImageVisible(false); // Hide bottomImage when footer is in view
+          } else {
+            setIsBottomImageVisible(true); // Show bottomImage when footer is out of view
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the footer is visible
+    );
+
+    if (footer) {
+      observer.observe(footer);
+    }
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (footer) observer.unobserve(footer);
+    };
   }, []);
 
   return (
@@ -95,7 +121,7 @@ export default function Home() {
       </div>
       <div
         className={`randomImagesSmScreen ${scrollProgress > 0 ? 'hidden' : ''}`}
-        key={resetAnimation ? "reset" : "normal"}
+        key={resetAnimation ? 'reset' : 'normal'}
       >
         <Image className="firstAppear" src={img1} alt="firstAppear" />
         <Image className="SecAppear" src={img2} alt="SecAppear" />
@@ -108,9 +134,11 @@ export default function Home() {
         <Image className="nineAppear" src={img9} alt="nineAppear" />
         <Image className="tenAppear" src={img10} alt="tenAppear" />
       </div>
-      <div className="bottomImage">
-        <Image src={bottomImage} alt="Bottom Image" />
-      </div>
+      {isBottomImageVisible && (
+        <div className="bottomImage">
+          <Image src={bottomImage} alt="Bottom Image" />
+        </div>
+      )}
     </div>
   );
 }
